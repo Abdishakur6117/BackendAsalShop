@@ -33,12 +33,12 @@ const getTrendingProducts = async (req, res) => {
   try {
     const products = await productModel
       .find()
-      .sort({ createdAt: -1 })
       .limit(4)
+      .sort({ createdAt: -1 })
       .populate({
         path: "Category",
         model: "Category",
-        select: "-_id name",
+        select:"name"
       });
 
     res.status(200).send({

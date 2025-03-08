@@ -10,7 +10,7 @@ const {
 } = require("../controllers/orderCtrl");
 const { auth } = require("../midddleware/auth");
 
-router.post("/", auth(["admin"]), createOrder);
+router.post("/", auth(["admin","user"]), createOrder);
 router.get("/", getOrder);
 router.get("/ByLoggedInUser", auth(["admin","user"]), getOrderByUser);
 router.get("/:id", auth(["admin"]), getByIdOrder);

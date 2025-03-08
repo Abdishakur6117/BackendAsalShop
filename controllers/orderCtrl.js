@@ -105,7 +105,7 @@ const getOrderByUser = async (req, res) => {
       .populate({
         path: "userId",
         model: "Users",
-        select: " name",
+        select: " -_id name",
       })
       .populate({
         path: "productId",
