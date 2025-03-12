@@ -45,7 +45,7 @@ const createOrder = async(req,res)=>{
                       req.body.TotalAmount = totalAmount;
                       req.body.userId = req.user.id;
                       req.body.status = "paid";
-                      //    req.body.price =findTheProduct.price
+                      req.body.price =findTheProduct.price
                       new orderModel(req.body).save();
                       // console.log(req.user.id);
                       //  res.send({status:true,message:"successfully created order"})
