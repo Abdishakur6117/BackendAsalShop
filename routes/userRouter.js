@@ -10,7 +10,7 @@ const {
 const { auth } = require("../midddleware/auth");
 const router = express.Router();
 
-router.post("/",auth(["admin","user"]), createUser);
+router.post("/", createUser);
 router.post("/login", Login);
 router.get("/", auth(["admin",]), getUser);
 router.get("/:id", auth(["admin"]), getByIdUser);

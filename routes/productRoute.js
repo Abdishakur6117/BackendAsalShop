@@ -10,7 +10,7 @@ const {
 } = require("../controllers/productctrl");
 const { auth } = require("../midddleware/auth");
 
-router.post("/",auth(["admin",]), createProduct);
+router.post("/",auth(["admin"]), createProduct);
 router.get("/", getProduct);
 router.get("/trending", getTrendingProducts);
 router.get("/:id", getByIdProduct);

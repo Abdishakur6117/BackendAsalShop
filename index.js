@@ -4,10 +4,6 @@ const productRouter = require("./routes/productRoute");
 const categoryRoute = require("./routes/categoryRoute");
 const userRouter = require("./routes/userRouter");
 const orderRouter = require("./routes/orderRoute");
-const jwt =require("jsonwebtoken");
-const { productModel } = require("./models/userModel");
-const { auth } = require("./midddleware/auth");
-
 
 const app = express();
 app.use(express.json());
