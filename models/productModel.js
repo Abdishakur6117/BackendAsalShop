@@ -10,7 +10,7 @@ const productSchema = mongoose.Schema(
       ref: "Category",
     },
   },
-  { timestamps: true },
+  { timestamps: true }, 
 );
 
 const productModel = mongoose.model("products", productSchema);

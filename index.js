@@ -8,12 +8,20 @@ const orderRouter = require("./routes/orderRoute");
 const app = express();
 app.use(express.json());
 //connections
+// mongoose
+//   .connect("mongodb://localhost:27017/e-commerce")
+//   .then(() => console.log("connect successfully"))
+//   .catch(() => console.log("connect Not successfully"));
 mongoose
-  .connect("mongodb://localhost:27017/e-commerce")
-  .then(() => console.log("connect successfully"))
-  .catch(() => console.log("connect Not successfully"));
+  .connect(
+    "mongodb+srv://shakrashakra733:Shakra337@cluster0.yexof.mongodb.net/e-commerce?retryWrites=true&w=majority&appName=Cluster0"
+  )
+  .then(() => console.log("Connected to MongoDB Atlas successfully"))
+  .catch((err) => console.error("MongoDB Atlas connection failed:", err));
 const cors = require("cors")
 app.use(cors())
+
+
 
 // app.get('/trendingProducts',async(req,res)=>{
 //     // console.log(req.body)
